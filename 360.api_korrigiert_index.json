@@ -1,0 +1,31 @@
+{
+  "name": "360.api — KORRIGIERT INDEX",
+  "version": "vFinal",
+  "state": "STATE STABIL READY 100%",
+  "zweck": "Vollrotation 360° / 6×6 Matrix / 64 Felder / AXI 6d ANKER API",
+  "struktur": {
+    "dim": "ROT DNA Α64",
+    "felder": 64,
+    "matrix": "8×8 KERN 6×6",
+    "rotation": "360° VOLLKREIS"
+  },
+  "rolle": "verbindet AXI 6d ANKER API",
+  "router": {
+    "AXI-ATOR": "aktiv",
+    "TriAxiom": "aktiv",
+    "RESPO-AXI-LINK.NET": "verbunden"
+  },
+  "links": [
+    "360.html",
+    "ori.html",
+    "station-geometrie",
+    "level-pyramiden",
+    "X.room.CORE/IN/OUT",
+    "6E-6D.tech",
+    "ID.html",
+    "verify.html",
+    "ruuf.md"
+  ],
+  "hölle": "vol.9 apfel.nar.html — SCHUTT / UNBUILT — VERMEIDEN DURCH KORRIGIERT",
+  "activation": "BEVOR HÖLLE LANDEN — SYSTEM ACTIVATION"
+}

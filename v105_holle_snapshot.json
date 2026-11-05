@@ -1,0 +1,198 @@
+{
+  "transitions": [
+    {
+      "from": 3,
+      "to": 9,
+      "reason": "load>0.30",
+      "dir": "up"
+    },
+    {
+      "from": 9,
+      "to": 27,
+      "reason": "load>0.45",
+      "dir": "up"
+    },
+    {
+      "from": 27,
+      "to": 81,
+      "reason": "load>0.60",
+      "dir": "up"
+    },
+    {
+      "from": 81,
+      "to": 243,
+      "reason": "load>0.75",
+      "dir": "up"
+    },
+    {
+      "from": 243,
+      "to": 729,
+      "reason": "load>0.88",
+      "dir": "up"
+    },
+    {
+      "from": 9,
+      "to": 3,
+      "reason": "load<0.20",
+      "dir": "down"
+    },
+    {
+      "from": 27,
+      "to": 9,
+      "reason": "load<0.30",
+      "dir": "down"
+    },
+    {
+      "from": 81,
+      "to": 27,
+      "reason": "load<0.40",
+      "dir": "down"
+    },
+    {
+      "from": 243,
+      "to": 81,
+      "reason": "load<0.25",
+      "dir": "down"
+    },
+    {
+      "from": 729,
+      "to": 243,
+      "reason": "load<0.50 || error",
+      "dir": "down"
+    },
+    {
+      "from": 81,
+      "to": 81,
+      "reason": "0.40<=load<=0.75",
+      "dir": "stay"
+    }
+  ],
+  "coverage": 45.7,
+  "balance": 0.9889814814814815,
+  "ncStack": {
+    "RAW": 12,
+    "NC": 18,
+    "CODEC": 22,
+    "CODEX": 20,
+    "CODEQ": 13,
+    "HOME": 15
+  },
+  "prediction": {
+    "current": 243,
+    "predicted": 243,
+    "confidence": 0.88,
+    "reason": "homeostatic",
+    "load": 0.5648125283357486
+  },
+  "snapshots": [
+    {
+      "time": "2026-11-05T13:01:26.260Z",
+      "layer": 27,
+      "coverage": 72,
+      "balance": 0.64
+    },
+    {
+      "time": "2026-11-05T13:21:26.260Z",
+      "layer": 81,
+      "coverage": 45.7,
+      "balance": 0.81
+    }
+  ],
+  "cycle": {
+    "found": false,
+    "length": 0,
+    "nodes": [],
+    "path": ""
+  },
+  "currentLayer": 243,
+  "load": 0.5648125283357486,
+  "activeFields": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36
+  ],
+  "terminals": [
+    {
+      "id": "HOME",
+      "label": "HOME",
+      "def": "f(x)=min(x,40) - terminaler Fixpunkt",
+      "cond": "x>=40 || stable>=0.95",
+      "color": "#00ff41"
+    },
+    {
+      "id": "VOID",
+      "label": "VOID",
+      "def": "Leere - keine aktiven Felder",
+      "cond": "coverage==0%",
+      "color": "#000000"
+    },
+    {
+      "id": "LIMIT",
+      "label": "LIMIT",
+      "def": "Kapazitätsgrenze erreicht",
+      "cond": "load>0.95 && layer==729",
+      "color": "#ff8c42"
+    },
+    {
+      "id": "ERROR",
+      "label": "ERROR",
+      "def": "Inkonsistenter Zustand",
+      "cond": "balance<0.2 || coverage<5%",
+      "color": "#ff4a2e"
+    },
+    {
+      "id": "LOOP",
+      "label": "LOOP",
+      "def": "Zyklus detektiert",
+      "cond": "history enthält Wiederholung",
+      "color": "#b388ff"
+    },
+    {
+      "id": "ROOT",
+      "label": "ROOT",
+      "def": "Ursprung 3 Pole - System-Neustart",
+      "cond": "manueller Reset",
+      "color": "#e8ff45"
+    }
+  ],
+  "eichung": {
+    "eich1": false,
+    "eich2": false,
+    "coverage": 45.7,
+    "stability": 0.7761888888888888
+  }
+}
